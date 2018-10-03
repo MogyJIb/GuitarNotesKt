@@ -10,7 +10,7 @@
 
     <fragment
         android:id="@+id/splash_fragment"
-        android:name="by.mogyjib.guitarnotes.splash.SplashFragment"
+        android:name="by.mogyjib.guitarnotes.splash.view.SplashFragment"
         android:label="fragment_splash"
         tools:layout="@layout/fragment_splash"
         />

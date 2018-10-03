@@ -41,4 +41,7 @@ dependencies {
 
     // Navigation
     implementation 'android.arch.navigation:navigation-fragment-ktx:1.0.0-alpha06'
+
+    // Dependency injection
+    implementation 'org.koin:koin-android:1.0.1'
 }

@@ -1,15 +1,15 @@
-package by.mogyjib.guitarnotes.splash
+package by.mogyjib.guitarnotes.splash.view
 
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import by.mogyjib.guitarnotes.R
+import by.mogyjib.guitarnotes.base.view.BaseFragment
 
 
-class SplashFragment : Fragment() {
+class SplashFragment : BaseFragment() {
 
     companion object {
         @JvmStatic fun newInstance() = SplashFragment()
