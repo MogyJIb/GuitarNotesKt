@@ -1,11 +1,11 @@
-package by.mogyjib.guitarnotes.splash
+package by.mogyjib.guitarnotes.splash.view
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.Navigation
 import by.mogyjib.guitarnotes.R
+import by.mogyjib.guitarnotes.base.view.BaseActivity
 
-class SplashActivity : AppCompatActivity() {
+class SplashActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
