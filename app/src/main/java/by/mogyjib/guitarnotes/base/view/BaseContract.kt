@@ -9,11 +9,9 @@ object BaseContract {
      */
     interface Presenter<V : View> {
 
-        fun init()
-
+        fun init() {}
         fun onViewCreated(view: V)
-
-        fun onDestroyView()
+        fun onDestroyView() {}
     }
 
     /**
@@ -22,9 +20,7 @@ object BaseContract {
     interface View {
 
         fun context(): Context
-
-        fun withProgress(action: () -> Unit)
-
+        fun withProgress(action: () -> Unit) { action() }
         fun handleError(error: Throwable) {
             println("${this.javaClass.simpleName}\n${error.message}")
             error.printStackTrace()

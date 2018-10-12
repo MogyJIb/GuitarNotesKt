@@ -1,4 +1,4 @@
-package by.mogyjib.guitarnotes.splash.view
+package by.mogyjib.guitarnotes.main.view
 
 
 import android.os.Bundle

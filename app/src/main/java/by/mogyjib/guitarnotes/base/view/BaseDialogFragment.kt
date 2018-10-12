@@ -8,8 +8,4 @@ abstract class BaseDialogFragment : DialogFragment(), BaseContract.View {
     override fun context() = context
             ?: throw NullPointerException("Class ${this.javaClass.simpleName} context is null")
 
-    override fun withProgress(action: () -> Unit) {
-        ProgressDialogFragment.actionWithProgress(
-                fragmentManager!!, this.javaClass.simpleName, action)
-    }
 }
