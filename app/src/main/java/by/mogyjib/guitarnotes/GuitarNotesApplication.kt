@@ -1,7 +1,7 @@
 package by.mogyjib.guitarnotes
 
 import android.app.Application
-import by.mogyjib.guitarnotes.dependency.modules.appModule
+import by.mogyjib.guitarnotes.main.dependency.appModule
 import org.koin.android.ext.android.startKoin
 
 class GuitarNotesApplication : Application(){

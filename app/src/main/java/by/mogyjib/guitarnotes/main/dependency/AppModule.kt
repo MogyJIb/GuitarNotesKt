@@ -1,4 +1,4 @@
-package by.mogyjib.guitarnotes.dependency.modules
+package by.mogyjib.guitarnotes.main.dependency
 
 import org.koin.dsl.module.module
 
