@@ -12,7 +12,7 @@ class MainActivity : BaseActivity() {
         setContentView(R.layout.activity_main)
     }
 
-    override fun onSupportNavigateUp() =
-            Navigation.findNavController(this, R.id.main_nav_host_fragment).navigateUp()
+    override fun onSupportNavigateUp() = router().navigateUp()
+      override fun router() = Navigation.findNavController(this, R.id.main_nav_host_fragment)
 
 }

@@ -1,11 +1,21 @@
 package by.mogyjib.guitarnotes.base.view
 
-abstract class BasePresenter<V : BaseContract.View> : BaseContract.Presenter<V> {
+import io.reactivex.disposables.CompositeDisposable
 
-    protected lateinit var view: V
+abstract class BasePresenter<V : Any> : BaseContract.Presenter {
 
-    override fun onViewCreated(view: V) {
-        this.view = view
+    protected var view: V? = null
+    protected lateinit var disposables: CompositeDisposable
+
+    override fun bind(view: Any) {
+        this.view = view as V
+        disposables = CompositeDisposable()
         init()
     }
+
+    override fun unbind() {
+        view = null
+        disposables.dispose()
+    }
+
 }
