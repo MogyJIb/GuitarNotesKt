@@ -1,4 +1,4 @@
-package by.mogyjib.guitarnotes.main.view
+package by.mogyjib.guitarnotes.main.splash.view
 
 
 import android.os.Bundle
@@ -7,22 +7,21 @@ import android.view.View
 import android.view.ViewGroup
 import by.mogyjib.guitarnotes.R
 import by.mogyjib.guitarnotes.base.view.BaseFragment
+import org.koin.android.ext.android.inject
 
 
-class SplashFragment : BaseFragment() {
+class SplashFragment : BaseFragment(), SplashContract.View {
 
-    companion object {
-        @JvmStatic fun newInstance() = SplashFragment()
-    }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {}
-    }
+    override val presenter: SplashPresenter by inject()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_splash, container, false)
     }
+
+    override fun openMainScreen() {
+        router().navigate(R.id.action_splash_to_songlist)
+    }
+
 }
