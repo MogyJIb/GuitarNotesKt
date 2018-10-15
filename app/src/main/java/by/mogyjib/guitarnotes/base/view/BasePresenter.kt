@@ -3,7 +3,6 @@ package by.mogyjib.guitarnotes.base.view
 import io.reactivex.disposables.CompositeDisposable
 
 abstract class BasePresenter<V : Any> : BaseContract.Presenter {
-
     protected var view: V? = null
     protected lateinit var disposables: CompositeDisposable
 
@@ -17,5 +16,4 @@ abstract class BasePresenter<V : Any> : BaseContract.Presenter {
         view = null
         disposables.dispose()
     }
-
 }

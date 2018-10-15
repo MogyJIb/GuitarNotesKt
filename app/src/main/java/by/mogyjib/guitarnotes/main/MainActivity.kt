@@ -6,7 +6,6 @@ import by.mogyjib.guitarnotes.R
 import by.mogyjib.guitarnotes.base.view.BaseActivity
 
 class MainActivity : BaseActivity() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -14,5 +13,4 @@ class MainActivity : BaseActivity() {
 
     override fun onSupportNavigateUp() = router().navigateUp()
       override fun router() = Navigation.findNavController(this, R.id.main_nav_host_fragment)
-
 }

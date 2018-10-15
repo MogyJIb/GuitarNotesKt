@@ -1,10 +1,8 @@
 package by.mogyjib.guitarnotes.base.view
 
 import androidx.fragment.app.Fragment
-import androidx.navigation.NavController
 
 abstract class BaseFragment: Fragment(), BaseContract.View {
-
     protected abstract val presenter: BaseContract.Presenter
 
     override fun router() =
@@ -28,5 +26,4 @@ abstract class BaseFragment: Fragment(), BaseContract.View {
         presenter.unbind()
         super.onPause()
     }
-
 }
