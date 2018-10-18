@@ -1,23 +1,16 @@
 package by.mogyjib.guitarnotes
 
-import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.room.Room
-import androidx.test.ext.junit.runners.AndroidJUnit4
 import by.mogyjib.guitarnotes.data.DatabaseApi
-import org.junit.After
-import org.junit.Before
 import org.junit.runner.RunWith
 import androidx.test.platform.app.InstrumentationRegistry
-import
+import androidx.test.runner.AndroidJUnit4
 import by.mogyjib.guitarnotes.data.models.Song
-import org.junit.Rule
-import org.junit.Test
+import org.junit.*
 
 
 @RunWith(AndroidJUnit4::class)
 class SongDaoTest {
-    @Rule
-    var instantTaskExecutorRule = InstantTaskExecutorRule()
 
     private lateinit var database: DatabaseApi
 
@@ -40,13 +33,10 @@ class SongDaoTest {
 
     @Test
     fun insertAndGetUserById() {
-        val song = Song("someName", "11", "TEXTTEXTTEXT")
-        database.songDao().insert(song)
+        val expected = Song("someName", "11", "TEXTTEXTTEXT")
+        database.songDao().insert(expected)
 
-        database.songDao().get(song.uid)
-                .filter { it.isEmpty() }
-                .map { it.first() }
-                .test()
-                .assertValue { it == song }
+        val actual = database.songDao().get(expected.uid).blockingFirst()[0]
+        Assert.assertEquals(expected, actual)
     }
 }
