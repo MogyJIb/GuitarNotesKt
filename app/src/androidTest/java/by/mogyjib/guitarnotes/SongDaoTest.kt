@@ -32,11 +32,32 @@ class SongDaoTest {
     }
 
     @Test
-    fun insertAndGetUserById() {
+    fun insertAndGetById() {
         val expected = Song("someName", "11", "TEXTTEXTTEXT")
         database.songDao().insert(expected)
 
         val actual = database.songDao().get(expected.uid).blockingFirst()[0]
         Assert.assertEquals(expected, actual)
+    }
+
+    @Test
+    fun insertAndDeleteById() {
+        val expected = Song("someName", "11", "TEXTTEXTTEXT")
+        database.songDao().insert(expected)
+
+        val actual = database.songDao().get(expected.uid).blockingFirst()[0]
+        Assert.assertEquals(expected, actual)
+
+        database.songDao().delete(expected.uid)
+        val list = database.songDao().get(expected.uid).blockingFirst()
+        Assert.assertTrue(list.isEmpty())
+    }
+
+    @Test
+    fun findByName() {
+        val expected = Song("someName", "11", "TEXTTEXTTEXT")
+        database.songDao().insert(expected)
+        val actual = database.songDao().findByName("%ome%").blockingFirst()
+        Assert.assertEquals(expected, actual[0])
     }
 }
