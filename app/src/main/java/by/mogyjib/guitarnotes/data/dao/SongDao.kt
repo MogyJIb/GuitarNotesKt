@@ -22,10 +22,10 @@ interface SongDao {
     @Query("SELECT * FROM songs WHERE author LIKE :author")
     fun findByAuthor(author: String): Observable<List<Song>>
 
-    @Insert(onConflict = REPLACE)
+    @Insert
     fun insert(vararg songs: Song)
 
-    @Update(onConflict = REPLACE)
+    @Update
     fun update(vararg songs: Song)
 
     @Delete
