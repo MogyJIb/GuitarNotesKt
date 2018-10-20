@@ -3,7 +3,7 @@ package by.mogyjib.guitarnotes.base.view
 import android.content.Context
 import androidx.navigation.NavController
 
-object BaseContract {
+interface BaseContract {
     /**
      * Base presenter
      */
