@@ -32,4 +32,9 @@
         <item name="android:indeterminateTintMode">src_in</item>
     </style>
 
+    <style name="Widget.AppTheme.BottomAppBar" parent="Widget.MaterialComponents.BottomAppBar">
+        <item name="backgroundTint">@color/primary</item>
+
+    </style>
+
 </resources>
