@@ -1,10 +1,7 @@
-package by.mogyjib.guitarnotes.data.dao
+package by.mogyjib.guitarnotes.data.database
 
 import androidx.room.*
-import androidx.room.OnConflictStrategy.REPLACE
 import by.mogyjib.guitarnotes.data.models.Song
-import io.reactivex.Flowable
-import io.reactivex.Maybe
 import io.reactivex.Observable
 
 

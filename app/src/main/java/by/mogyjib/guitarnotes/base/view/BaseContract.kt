@@ -11,6 +11,10 @@ interface BaseContract {
         fun init() {}
         fun bind(view: Any)
         fun unbind() {}
+        fun handleError(error: Throwable) {
+            println("${this.javaClass.simpleName}\n${error.message}")
+            error.printStackTrace()
+        }
     }
 
     /**
@@ -18,10 +22,6 @@ interface BaseContract {
      */
     interface View : Router {
         fun context(): Context
-        fun handleError(error: Throwable) {
-            println("${this.javaClass.simpleName}\n${error.message}")
-            error.printStackTrace()
-        }
     }
 
     /**

@@ -1,7 +1,7 @@
 package by.mogyjib.guitarnotes
 
 import androidx.room.Room
-import by.mogyjib.guitarnotes.data.DatabaseApi
+import by.mogyjib.guitarnotes.data.database.DatabaseApi
 import org.junit.runner.RunWith
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.runner.AndroidJUnit4

@@ -1,18 +1,22 @@
 package by.mogyjib.guitarnotes.main.splash.view
 
 import by.mogyjib.guitarnotes.base.view.BasePresenter
-import io.reactivex.Single
+import by.mogyjib.guitarnotes.data.repository.IRepository
+import by.mogyjib.guitarnotes.utils.async
+import by.mogyjib.guitarnotes.utils.fakeSongList
 import io.reactivex.rxkotlin.plusAssign
 import io.reactivex.rxkotlin.subscribeBy
-import io.reactivex.schedulers.Schedulers
 import java.util.concurrent.TimeUnit
 
-class SplashPresenter : BasePresenter<SplashContract.View>() {
 
+class SplashPresenter(
+        private val repository: IRepository
+) : BasePresenter<SplashContract.View>() {
     override fun init() {
-        disposables += Single.timer(7, TimeUnit.SECONDS)
-                .subscribeOn(Schedulers.io())
+        disposables += repository.songs().getAll()
+                .delay(3, TimeUnit.SECONDS)
+                .map { if (it.isEmpty()) repository.songs().add(*fakeSongList().toTypedArray()) }
+                .async()
                 .subscribeBy { view?.openMainScreen() }
     }
-
 }
