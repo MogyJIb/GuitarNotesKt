@@ -8,16 +8,16 @@ import io.reactivex.Observable
 @Dao
 interface SongDao {
     @Query("SELECT * FROM songs")
-    fun getAll(): Observable<List<Song>>
+    fun getAll(): List<Song>
 
     @Query("SELECT * FROM songs WHERE uid IN (:songIds)")
-    fun get(vararg songIds: String): Observable<List<Song>>
+    fun get(vararg songIds: String): List<Song>
 
     @Query("SELECT * FROM songs WHERE name LIKE :name")
-    fun findByName(name: String): Observable<List<Song>>
+    fun findByName(name: String): List<Song>
 
     @Query("SELECT * FROM songs WHERE author LIKE :author")
-    fun findByAuthor(author: String): Observable<List<Song>>
+    fun findByAuthor(author: String): List<Song>
 
     @Insert
     fun insert(vararg songs: Song)

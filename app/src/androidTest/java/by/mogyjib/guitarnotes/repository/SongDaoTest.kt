@@ -1,4 +1,4 @@
-package by.mogyjib.guitarnotes
+package by.mogyjib.guitarnotes.repository
 
 import androidx.room.Room
 import by.mogyjib.guitarnotes.data.database.DatabaseApi
@@ -36,7 +36,7 @@ class SongDaoTest {
         val expected = Song("someName", "11", "TEXTTEXTTEXT")
         database.songDao().insert(expected)
 
-        val actual = database.songDao().get(expected.uid).blockingFirst()[0]
+        val actual = database.songDao().get(expected.uid)[0]
         Assert.assertEquals(expected, actual)
     }
 
@@ -45,11 +45,11 @@ class SongDaoTest {
         val expected = Song("someName", "11", "TEXTTEXTTEXT")
         database.songDao().insert(expected)
 
-        val actual = database.songDao().get(expected.uid).blockingFirst()[0]
+        val actual = database.songDao().get(expected.uid)[0]
         Assert.assertEquals(expected, actual)
 
         database.songDao().delete(expected.uid)
-        val list = database.songDao().get(expected.uid).blockingFirst()
+        val list = database.songDao().get(expected.uid)
         Assert.assertTrue(list.isEmpty())
     }
 
@@ -57,7 +57,7 @@ class SongDaoTest {
     fun findByName() {
         val expected = Song("someName", "11", "TEXTTEXTTEXT")
         database.songDao().insert(expected)
-        val actual = database.songDao().findByName("%ome%").blockingFirst()
+        val actual = database.songDao().findByName("%ome%")
         Assert.assertEquals(expected, actual[0])
     }
 }
