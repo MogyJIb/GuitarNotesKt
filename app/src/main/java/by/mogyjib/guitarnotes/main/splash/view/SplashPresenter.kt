@@ -7,6 +7,7 @@ import by.mogyjib.guitarnotes.utils.fakeSongList
 import io.reactivex.Observable
 import io.reactivex.rxkotlin.plusAssign
 import io.reactivex.rxkotlin.subscribeBy
+import java.util.concurrent.TimeUnit
 
 
 class SplashPresenter(
@@ -18,7 +19,7 @@ class SplashPresenter(
                     if (it.isEmpty())
                         repository.songs().add(*fakeSongList().toTypedArray())
                     else
-                        Observable.just(Unit)
+                        Observable.just(Unit).delay(3, TimeUnit.SECONDS)
                 }
                 .async()
                 .subscribeBy { view?.openMainScreen() }
