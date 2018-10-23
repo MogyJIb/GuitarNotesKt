@@ -4,9 +4,9 @@ import by.mogyjib.guitarnotes.base.view.BasePresenter
 import by.mogyjib.guitarnotes.data.repository.IRepository
 import by.mogyjib.guitarnotes.utils.async
 import by.mogyjib.guitarnotes.utils.fakeSongList
+import io.reactivex.Observable
 import io.reactivex.rxkotlin.plusAssign
 import io.reactivex.rxkotlin.subscribeBy
-import java.util.concurrent.TimeUnit
 
 
 class SplashPresenter(
@@ -14,8 +14,12 @@ class SplashPresenter(
 ) : BasePresenter<SplashContract.View>() {
     override fun init() {
         disposables += repository.songs().getAll()
-                .delay(3, TimeUnit.SECONDS)
-                .map { if (it.isEmpty()) repository.songs().add(*fakeSongList().toTypedArray()) }
+                .flatMap {
+                    if (it.isEmpty())
+                        repository.songs().add(*fakeSongList().toTypedArray())
+                    else
+                        Observable.just(Unit)
+                }
                 .async()
                 .subscribeBy { view?.openMainScreen() }
     }
