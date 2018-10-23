@@ -6,13 +6,20 @@
 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     >
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/songs_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:paddingTop="@dimen/_8dp"
+        android:paddingBottom="@dimen/_80dp"
+        android:clipToPadding="false"
+        android:overScrollMode="never"
+        android:scrollbars="none"
 
+        app:layout_anchor="@id/add_button"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
 
         tools:context=".main.songs.view.SongListFragment"
@@ -27,6 +34,8 @@
 
         style="@style/Widget.AppTheme.BottomAppBar"
 
+        app:hideOnScroll="true"
+        app:layout_scrollFlags="scroll|enterAlways"
         app:fabAlignmentMode="center"
         app:navigationIcon="@drawable/outline_menu_white_24"
         />
