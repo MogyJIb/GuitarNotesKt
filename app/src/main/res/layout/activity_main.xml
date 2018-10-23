@@ -7,17 +7,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
-    tools:context=".splash.view.SplashActivity"
+    tools:context=".main.MainActivity"
     >
 
     <fragment
-        android:id="@+id/splash_nav_host_fragment"
+        android:id="@+id/main_nav_host_fragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:name="androidx.navigation.fragment.NavHostFragment"
 
         app:defaultNavHost="true"
-        app:navGraph="@navigation/splash_navigation_graph"
+        app:navGraph="@navigation/main_navigation_graph"
         />
 
 </LinearLayout>

@@ -1,15 +1,17 @@
 package by.mogyjib.guitarnotes.base.view
 
 import androidx.fragment.app.DialogFragment
-import by.mogyjib.guitarnotes.utils.progress.ProgressDialogFragment
 
 abstract class BaseDialogFragment : DialogFragment(), BaseContract.View {
-
     override fun context() = context
             ?: throw NullPointerException("Class ${this.javaClass.simpleName} context is null")
 
-    override fun withProgress(action: () -> Unit) {
-        ProgressDialogFragment.actionWithProgress(
-                fragmentManager!!, this.javaClass.simpleName, action)
-    }
+    override fun router() =
+            if (activity is BaseActivity)
+                (activity as BaseActivity).router()
+            else
+                throw IllegalStateException(
+                        "Can't route BaseFragment in ${activity?.javaClass?.simpleName}." +
+                                " Use only with BaseActivity instance."
+                )
 }

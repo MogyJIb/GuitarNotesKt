@@ -13,7 +13,6 @@ import androidx.fragment.app.FragmentManager
 import by.mogyjib.guitarnotes.R
 
 class ProgressDialogFragment : DialogFragment() {
-
     companion object {
         @JvmStatic
         fun newInstance() = ProgressDialogFragment()
@@ -37,5 +36,4 @@ class ProgressDialogFragment : DialogFragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedState: Bundle?) :View?
             = inflater.inflate(R.layout.dialog_progress, container, false)
-
 }

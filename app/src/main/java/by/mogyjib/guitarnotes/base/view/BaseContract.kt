@@ -1,33 +1,33 @@
 package by.mogyjib.guitarnotes.base.view
 
 import android.content.Context
+import androidx.navigation.NavController
 
-object BaseContract {
-
+interface BaseContract {
     /**
      * Base presenter
      */
-    interface Presenter<V : View> {
-
-        fun init()
-
-        fun onViewCreated(view: V)
-
-        fun onDestroyView()
+    interface Presenter {
+        fun init() {}
+        fun bind(view: Any)
+        fun unbind() {}
+        fun handleError(error: Throwable) {
+            println("${this.javaClass.simpleName}\n${error.message}")
+            error.printStackTrace()
+        }
     }
 
     /**
      * Base view
      */
-    interface View {
-
+    interface View : Router {
         fun context(): Context
+    }
 
-        fun withProgress(action: () -> Unit)
-
-        fun handleError(error: Throwable) {
-            println("${this.javaClass.simpleName}\n${error.message}")
-            error.printStackTrace()
-        }
+    /**
+     * Base router
+     */
+    interface Router {
+        fun router(): NavController
     }
 }
