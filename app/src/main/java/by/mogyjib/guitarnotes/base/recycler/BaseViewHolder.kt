@@ -2,7 +2,6 @@ package by.mogyjib.guitarnotes.base.recycler
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
-import butterknife.ButterKnife
 import by.mogyjib.guitarnotes.base.OnClickListener
 import by.mogyjib.guitarnotes.base.OnLongClickListener
 
@@ -27,10 +26,6 @@ abstract class BaseViewHolder<T : Any>(
                 field = listener
             }
         }
-
-    init {
-        ButterKnife.bind(itemView)
-    }
 
     open fun bindData(data: T) {
         this.data = data

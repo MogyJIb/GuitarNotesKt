@@ -6,9 +6,8 @@ import by.mogyjib.guitarnotes.base.recycler.BaseRecyclerViewAdapter
 import by.mogyjib.guitarnotes.base.recycler.BaseViewHolder
 import by.mogyjib.guitarnotes.data.models.Song
 import android.view.LayoutInflater
-import android.widget.TextView
-import butterknife.BindView
 import by.mogyjib.guitarnotes.R
+import kotlinx.android.synthetic.main.song_list_item.view.*
 
 
 class SongsAdapter : BaseRecyclerViewAdapter<Song, SongsAdapter.SongsViewHolder>() {
@@ -19,8 +18,8 @@ class SongsAdapter : BaseRecyclerViewAdapter<Song, SongsAdapter.SongsViewHolder>
     }
 
     class SongsViewHolder(itemView: View) : BaseViewHolder<Song>(itemView) {
-        @BindView(R.id.song_name) lateinit var nameTV: TextView
-        @BindView(R.id.song_name) lateinit var authorTV: TextView
+        private val nameTV = itemView.song_name
+        private val authorTV = itemView.song_author
 
         override fun bindData(song: Song) {
             super.bindData(song)
