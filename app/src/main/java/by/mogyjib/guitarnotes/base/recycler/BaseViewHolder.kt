@@ -14,7 +14,7 @@ abstract class BaseViewHolder<T : Any>(
     var onClickListener: OnClickListener<T>? = null
         set(value) {
             value?.let { listener ->
-                itemView.setOnClickListener { listener.onClicked(data) }
+                itemView.setOnClickListener { listener(data) }
                 field = listener
             }
         }
@@ -22,7 +22,7 @@ abstract class BaseViewHolder<T : Any>(
     var onLongClickListener: OnLongClickListener<T>? = null
         set(value) {
             value?.let { listener ->
-                itemView.setOnLongClickListener { listener.onLongClicked(data) }
+                itemView.setOnLongClickListener { listener(data) }
                 field = listener
             }
         }
