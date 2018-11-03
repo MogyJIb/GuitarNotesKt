@@ -1,4 +1,4 @@
-package by.mogyjib.guitarnotes.main.songs.view
+package by.mogyjib.guitarnotes.main.songs.view.list
 
 import by.mogyjib.guitarnotes.base.view.BaseContract
 import by.mogyjib.guitarnotes.data.models.Song

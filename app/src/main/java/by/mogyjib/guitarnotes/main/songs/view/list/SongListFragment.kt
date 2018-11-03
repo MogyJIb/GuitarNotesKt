@@ -1,4 +1,4 @@
-package by.mogyjib.guitarnotes.main.songs.view
+package by.mogyjib.guitarnotes.main.songs.view.list
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,8 +12,6 @@ import by.mogyjib.guitarnotes.main.songs.SongsAdapter
 import kotlinx.android.synthetic.main.fragment_songlist.*
 import org.koin.android.ext.android.inject
 import androidx.recyclerview.widget.DividerItemDecoration
-
-
 
 
 class SongListFragment : BaseFragment(), SongListContract.View {

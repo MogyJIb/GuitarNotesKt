@@ -29,7 +29,7 @@
 
     <fragment
         android:id="@+id/songlist_fragment"
-        android:name="by.mogyjib.guitarnotes.main.songs.view.SongListFragment"
+        android:name="by.mogyjib.guitarnotes.main.songs.view.list.SongListFragment"
         android:label="fragment_songlist"
         tools:layout="@layout/fragment_songlist"
         />
