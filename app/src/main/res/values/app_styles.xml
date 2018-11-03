@@ -16,7 +16,6 @@
         <item name="android:colorForeground">@color/foreground</item>
         <item name="android:textColorSecondary">@color/text_primary</item>
         <item name="android:textColorSecondaryInverse">@color/text_primary_inverse</item>
-
         <!-- Custom text. -->
         <item name="android:fontFamily">@font/monterey_font</item>
         <item name="android:textSize">@dimen/_16sp</item>
@@ -38,7 +37,6 @@
 
     <style name="Widget.AppTheme.BottomAppBar" parent="Widget.MaterialComponents.BottomAppBar">
         <item name="backgroundTint">@color/primary</item>
-
     </style>
 
 </resources>

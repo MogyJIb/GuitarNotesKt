@@ -19,6 +19,7 @@
             android:id="@+id/action_splash_to_songlist"
             app:destination="@+id/songlist_fragment"
             />
+
     </fragment>
 
     <fragment
@@ -27,4 +28,5 @@
         android:label="fragment_songlist"
         tools:layout="@layout/fragment_songlist"
         />
+
 </navigation>

@@ -1,21 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+<layer-list
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
     <item
         android:left="@dimen/_32dp"
         android:right="@dimen/_32dp"
         >
 
-        <shape android:shape="oval">
+        <shape
+            android:shape="oval"
+            >
 
-            <size android:height="@dimen/_1dp"/>
+            <size
+                android:height="@dimen/_1dp"
+                />
 
             <gradient
-                android:startColor="@color/primary"
-                android:centerColor="@color/accent"
-                android:endColor="@color/primary"
+                android:startColor="@color/accent"
+                android:centerColor="@color/primary"
+                android:endColor="@color/accent"
                 />
 
         </shape>
 
     </item>
+
 </layer-list>
