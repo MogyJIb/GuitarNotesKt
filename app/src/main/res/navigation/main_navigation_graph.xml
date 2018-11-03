@@ -18,6 +18,7 @@
         <action
             android:id="@+id/action_splash_to_songlist"
             app:destination="@+id/songlist_fragment"
+            app:destination="@id/songlist_fragment"
             app:popUpTo="@id/songlist_fragment"
             />
 
