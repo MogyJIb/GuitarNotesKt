@@ -6,6 +6,7 @@ import by.mogyjib.guitarnotes.data.repository.IRepository
 import by.mogyjib.guitarnotes.utils.async
 import io.reactivex.Observable
 import io.reactivex.rxkotlin.plusAssign
+import java.util.concurrent.TimeUnit
 
 
 class SongListPresenter(
@@ -19,5 +20,15 @@ class SongListPresenter(
                     Observable.just(emptyList<Song>())
                 }
                 .subscribe { view?.updateSongs(it) }
+
+        disposables += Observable.fromCallable {  }
+                .delay(700, TimeUnit.MILLISECONDS)
+                .async()
+                .subscribe { view?.showAddButton() }
+    }
+
+    override fun onSongItemClicked(song: Song) {
+        view?.hideAddButton()
+        view?.navigateToEditSong()
     }
 }

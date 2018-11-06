@@ -6,7 +6,12 @@ import by.mogyjib.guitarnotes.data.models.Song
 interface SongListContract {
     interface View : BaseContract.View {
         fun updateSongs(songs: List<Song>)
+        fun showAddButton(): Unit?
+        fun hideAddButton(): Unit?
+        fun navigateToEditSong()
     }
 
-    interface Presenter : BaseContract.Presenter
+    interface Presenter : BaseContract.Presenter {
+        fun onSongItemClicked(song: Song)
+    }
 }

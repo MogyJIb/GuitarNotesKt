@@ -39,4 +39,26 @@
         <item name="backgroundTint">@color/primary</item>
     </style>
 
+    <style name="Widget.AppTheme.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/accent</item>
+        <item name="hintEnabled">true</item>
+        <item name="helperTextTextAppearance">@style/TextAppearance.AppTheme.TextInputLayout.HelperText</item>
+        <item name="errorTextAppearance">@style/TextAppearance.AppTheme.TextInputLayout.Error</item>
+        <item name="hintTextAppearance">@style/TextAppearance.AppTheme.TextInputLayout.Hint</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.TextInputLayout.Hint" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:textSize">@dimen/_12sp</item>
+        <item name="android:paddingRight">@dimen/_4dp</item>
+        <item name="android:paddingLeft">@dimen/_2dp</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.TextInputLayout.HelperText" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:textSize">@dimen/_12sp</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.TextInputLayout.Error" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:textSize">@dimen/_12sp</item>
+    </style>
+    
 </resources>

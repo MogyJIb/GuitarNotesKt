@@ -1,18 +1,12 @@
 package by.mogyjib.guitarnotes.base.view
 
 import androidx.fragment.app.Fragment
+import by.mogyjib.guitarnotes.utils.findNavController
 
 abstract class BaseFragment: Fragment(), BaseContract.View {
     protected abstract val presenter: BaseContract.Presenter
 
-    override fun router() =
-                if (activity is BaseActivity)
-                    (activity as BaseActivity).router()
-                else
-                    throw IllegalStateException(
-                            "Can't set BaseFragment to ${activity?.javaClass?.simpleName}." +
-                                    " Use only with BaseActivity instance."
-                    )
+    override fun router() = view!!.findNavController()
 
     override fun context() = context
             ?: throw NullPointerException("Class ${this.javaClass.simpleName} context is null")
