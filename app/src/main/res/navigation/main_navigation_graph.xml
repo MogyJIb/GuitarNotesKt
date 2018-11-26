@@ -10,7 +10,7 @@
 
     <fragment
         android:id="@+id/splash_fragment"
-        android:name="by.mogyjib.guitarnotes.main.splash.view.SplashFragment"
+        android:name="by.mogyjib.guitarnotes.presentation.main.splash.view.SplashFragment"
         android:label="fragment_splash"
         tools:layout="@layout/fragment_splash"
         >
@@ -29,7 +29,7 @@
 
     <fragment
         android:id="@+id/songlist_fragment"
-        android:name="by.mogyjib.guitarnotes.main.songs.view.list.SongListFragment"
+        android:name="by.mogyjib.guitarnotes.presentation.main.songs.view.list.SongListFragment"
         android:label="fragment_songlist"
         tools:layout="@layout/fragment_songlist"
         >
@@ -48,7 +48,7 @@
 
     <fragment
         android:id="@+id/song_edit_fragment"
-        android:name="by.mogyjib.guitarnotes.main.songs.view.edit.SongEditFragment"
+        android:name="by.mogyjib.guitarnotes.presentation.main.songs.view.edit.SongEditFragment"
         android:label="fragment_song_edit"
         tools:layout="@layout/fragment_song_edit"
         />

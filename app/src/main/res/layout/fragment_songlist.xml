@@ -22,7 +22,7 @@
         app:layout_anchor="@id/add_button"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
 
-        tools:context=".main.songs.view.list.SongListFragment"
+        tools:context=".presentation.main.songs.view.list.SongListFragment"
         tools:listItem="@layout/song_list_item"
         />
 
