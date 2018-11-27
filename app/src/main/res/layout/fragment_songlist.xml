@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,47 +7,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
+    android:orientation="vertical"
     >
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/songs_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:overScrollMode="never"
+        android:scrollbars="none"
         android:paddingTop="@dimen/_8dp"
         android:paddingBottom="@dimen/_80dp"
         android:clipToPadding="false"
-        android:overScrollMode="never"
-        android:scrollbars="none"
 
-        app:layout_anchor="@id/add_button"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
 
-        tools:context=".presentation.main.songs.view.list.SongListFragment"
+        tools:context=".main.presentation.songs.list.SongListFragment"
         tools:listItem="@layout/song_list_item"
         />
 
-    <com.google.android.material.bottomappbar.BottomAppBar
-        android:id="@+id/bottom_app_bar"
-        android:transitionName="bottom_app_bar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-
-        style="@style/Widget.AppTheme.BottomAppBar"
-
-        app:hideOnScroll="true"
-        app:layout_scrollFlags="scroll|enterAlways"
-        app:fabAlignmentMode="center"
-        app:navigationIcon="@drawable/outline_menu_white_24"
-        />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/add_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/outline_add_white_24"
-
-        app:layout_anchor="@id/bottom_app_bar"
-        />
-
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</LinearLayout>

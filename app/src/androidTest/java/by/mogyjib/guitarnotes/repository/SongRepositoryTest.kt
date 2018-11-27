@@ -3,10 +3,10 @@ package by.mogyjib.guitarnotes.repository
 import androidx.room.Room
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.runner.AndroidJUnit4
-import by.mogyjib.guitarnotes.data.database.DatabaseApi
-import by.mogyjib.guitarnotes.data.models.Song
-import by.mogyjib.guitarnotes.data.repository.IRepository
-import by.mogyjib.guitarnotes.data.repository.RepositoryApi
+import by.mogyjib.guitarnotes.main.data.database.DatabaseApi
+import by.mogyjib.guitarnotes.main.data.models.Song
+import by.mogyjib.guitarnotes.main.data.repository.IRepository
+import by.mogyjib.guitarnotes.main.data.repository.RepositoryApi
 import org.junit.After
 import org.junit.Assert
 import org.junit.Before

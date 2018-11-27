@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:id="@+id/main_navigation_graph"
+
+    app:startDestination="@id/songlist_fragment"
+    >
+
+    <fragment
+        android:id="@+id/songlist_fragment"
+        android:name="by.mogyjib.guitarnotes.main.presentation.songs.list.SongListFragment"
+        android:label="fragment_songlist"
+
+        tools:layout="@layout/fragment_songlist"
+        >
+
+        <action
+            android:id="@+id/action_songlist_to_song_edit"
+
+            app:destination="@id/song_edit_fragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/songlist_fragment"
+            />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/song_edit_fragment"
+        android:name="by.mogyjib.guitarnotes.main.presentation.songs.edit.SongEditFragment"
+        android:label="fragment_song_edit"
+
+        tools:layout="@layout/fragment_song_edit"
+        />
+
+</navigation>

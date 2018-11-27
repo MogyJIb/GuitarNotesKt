@@ -1,11 +1,11 @@
 package by.mogyjib.guitarnotes.repository
 
 import androidx.room.Room
-import by.mogyjib.guitarnotes.data.database.DatabaseApi
+import by.mogyjib.guitarnotes.main.data.database.DatabaseApi
 import org.junit.runner.RunWith
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.runner.AndroidJUnit4
-import by.mogyjib.guitarnotes.data.models.Song
+import by.mogyjib.guitarnotes.main.data.models.Song
 import org.junit.*
 
 
