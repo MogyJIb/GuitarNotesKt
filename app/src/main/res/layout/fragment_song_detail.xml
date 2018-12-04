@@ -7,14 +7,14 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/background"
-    android:paddingTop="@dimen/_8dp"
-    android:paddingBottom="@dimen/_80dp"
     android:clipToPadding="false"
     >
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:paddingTop="@dimen/_8dp"
+        android:paddingBottom="@dimen/_80dp"
         android:clipToPadding="false"
         android:overScrollMode="never"
         android:scrollbars="none"

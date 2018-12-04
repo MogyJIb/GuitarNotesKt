@@ -10,5 +10,6 @@ interface SongListContract {
 
     interface Presenter : BaseContract.Presenter {
         fun onSongItemClicked(song: Song)
+        fun onAddSongClicked()
     }
 }

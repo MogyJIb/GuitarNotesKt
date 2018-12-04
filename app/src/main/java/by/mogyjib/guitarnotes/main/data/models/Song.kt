@@ -3,6 +3,7 @@ package by.mogyjib.guitarnotes.main.data.models
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import java.io.Serializable
 import java.util.*
 
 
@@ -20,4 +21,4 @@ data class Song(
         @ColumnInfo(name = "uid")
         @PrimaryKey
         val uid: String = UUID.randomUUID().toString()
-)
+) : Serializable

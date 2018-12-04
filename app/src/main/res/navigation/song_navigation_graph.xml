@@ -18,9 +18,9 @@
         >
 
         <action
-            android:id="@+id/action_songlist_to_song_edit"
+            android:id="@+id/action_songlist_to_song_detail"
 
-            app:destination="@id/song_edit_fragment"
+            app:destination="@id/song_detail_fragment"
             app:enterAnim="@anim/nav_default_enter_anim"
             app:exitAnim="@anim/nav_default_exit_anim"
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
@@ -31,11 +31,11 @@
     </fragment>
 
     <fragment
-        android:id="@+id/song_edit_fragment"
-        android:name="by.mogyjib.guitarnotes.main.presentation.songs.edit.SongEditFragment"
-        android:label="fragment_song_edit"
+        android:id="@+id/song_detail_fragment"
+        android:name="by.mogyjib.guitarnotes.main.presentation.songs.detail.SongDetailFragment"
+        android:label="fragment_song_detail"
 
-        tools:layout="@layout/fragment_song_edit"
+        tools:layout="@layout/fragment_song_detail"
         />
 
 </navigation>

@@ -1,5 +1,6 @@
 package by.mogyjib.guitarnotes.main.presentation.songs.list
 
+import androidx.core.os.bundleOf
 import by.mogyjib.guitarnotes.R
 import by.mogyjib.guitarnotes.main.presentation.base.view.BasePresenter
 import by.mogyjib.guitarnotes.main.data.models.Song
@@ -7,7 +8,6 @@ import by.mogyjib.guitarnotes.main.data.repository.IRepository
 import by.mogyjib.guitarnotes.utils.async
 import io.reactivex.Observable
 import io.reactivex.rxkotlin.plusAssign
-import java.util.concurrent.TimeUnit
 
 
 class SongListPresenter(
@@ -24,5 +24,11 @@ class SongListPresenter(
     }
 
     override fun onSongItemClicked(song: Song)
-            = view?.router()?.navigate(R.id.action_songlist_to_song_edit) ?: Unit
+            = view?.router()?.navigate(
+                    R.id.action_songlist_to_song_detail,
+                    bundleOf("SONG" to song)
+            ) ?: Unit
+
+    override fun onAddSongClicked()
+            = view?.router()?.navigate(R.id.action_songlist_to_song_detail) ?: Unit
 }

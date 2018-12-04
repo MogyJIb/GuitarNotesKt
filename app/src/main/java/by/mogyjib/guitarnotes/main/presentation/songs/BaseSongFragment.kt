@@ -6,6 +6,7 @@ import by.mogyjib.guitarnotes.main.presentation.base.view.BaseFragment
 abstract class BaseSongFragment : BaseFragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         if (activity !is SongActivity) throw IllegalStateException("BaseSongFragment should be used only for SongActivity")
+        bottomBarButton().setOnClickListener(null)
         super.onCreate(savedInstanceState)
     }
 
