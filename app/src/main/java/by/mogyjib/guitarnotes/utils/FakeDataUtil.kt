@@ -1,7 +1,6 @@
-package by.mogyjib.guitarnotes.main.data
+package by.mogyjib.guitarnotes.utils
 
 import by.mogyjib.guitarnotes.main.data.models.Song
-import by.mogyjib.guitarnotes.utils.rand
 
 
 val songNamesList = names().split("\n")
