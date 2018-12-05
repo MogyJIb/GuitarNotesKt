@@ -20,3 +20,6 @@ fun fragmentNavigatorExtras(vararg sharedElements: Pair<View, String>) =
 fun View.hide() = let { visibility = View.GONE }
 fun View.show() = let { visibility = View.VISIBLE }
 fun View.isVisible() = visibility == View.VISIBLE
+
+fun View.enable() = let { isEnabled = true }
+fun View.disable() = let { isEnabled = false }
