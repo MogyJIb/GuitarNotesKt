@@ -3,6 +3,7 @@ package by.mogyjib.guitarnotes
 import by.mogyjib.guitarnotes.main.data.database.DatabaseApi
 import by.mogyjib.guitarnotes.main.data.repository.IRepository
 import by.mogyjib.guitarnotes.main.data.repository.RepositoryApi
+import by.mogyjib.guitarnotes.main.domain.DeleteSongUseCase
 import by.mogyjib.guitarnotes.main.domain.GetSongsUseCase
 import by.mogyjib.guitarnotes.main.domain.UpdateSongUseCase
 import by.mogyjib.guitarnotes.main.domain.ValidateSongUseCase
@@ -26,6 +27,7 @@ val domainModule = module {
     single { GetSongsUseCase(get()) }
     single { ValidateSongUseCase() }
     single { UpdateSongUseCase(get()) }
+    single { DeleteSongUseCase(get()) }
 }
 
 val splashModule = module {
@@ -35,5 +37,5 @@ val splashModule = module {
 val songsModule = module {
     factory { SongListPresenter(get()) as SongListContract.Presenter }
     factory { SongDetailPresenter(get()) as SongDetailContract.Presenter }
-    factory { SongEditPresenter(get(), get()) as SongEditContract.Presenter }
+    factory { SongEditPresenter(get(), get(), get()) as SongEditContract.Presenter }
 }

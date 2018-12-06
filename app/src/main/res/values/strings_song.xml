@@ -4,4 +4,5 @@
     <string name="invalid_song_author_error">Author can\'t be empty</string>
     <string name="invalid_song_text_error">Text can\'t be empty</string>
     <string name="save_song_success">Song was saved successfully</string>
+    <string name="delete_song_success">Song was deleted successfully</string>
 </resources>

@@ -3,21 +3,33 @@ package by.mogyjib.guitarnotes.main.presentation.songs.edit
 import by.mogyjib.guitarnotes.R
 import by.mogyjib.guitarnotes.main.data.models.Song
 import by.mogyjib.guitarnotes.base.view.BasePresenter
+import by.mogyjib.guitarnotes.main.domain.DeleteSongUseCase
 import by.mogyjib.guitarnotes.main.domain.UpdateSongUseCase
 import by.mogyjib.guitarnotes.main.domain.ValidateSongUseCase
 import io.reactivex.rxkotlin.plusAssign
 
 class SongEditPresenter(
         private val validateSongUseCase: ValidateSongUseCase,
-        private val updateSongUseCase: UpdateSongUseCase
+        private val updateSongUseCase: UpdateSongUseCase,
+        private val deleteSongUseCase: DeleteSongUseCase
 ) : BasePresenter<SongEditContract.View>(), SongEditContract.Presenter {
     override fun onDeleteButtonClicked(songId: String?) {
+        songId?.let {
+            disposables += deleteSongUseCase.deleteSongAsync(songId)
+                    .subscribe({
+                        view?.toast(R.string.delete_song_success)
+                        view?.router()?.navigateUp()
+                    }, this::handleError)
+        }
     }
 
     override fun onSaveButtonClicked(song: Song, songId: String?) {
         if (validateSong(song))
             disposables += updateSongUseCase.updateSongAsync(song, songId)
-                    .subscribe({ view?.toast(R.string.save_song_success) }, this::handleError)
+                    .subscribe({
+                        view?.toast(R.string.save_song_success)
+                        view?.router()?.navigateUp()
+                    }, this::handleError)
     }
 
     override fun onBackButtonClicked() { view?.router()?.navigateUp() }

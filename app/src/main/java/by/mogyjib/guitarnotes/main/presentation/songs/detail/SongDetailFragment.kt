@@ -37,5 +37,17 @@ class SongDetailFragment : BaseSongFragment(), SongDetailContract.View {
         name_edit_text.disable()
         author_edit_text.disable()
         text_edit_text.disable()
+
+        /* Init on menu item click listener */
+        bottomBar().setOnMenuItemClickListener {
+            when (it.itemId) {
+                R.id.action_delete -> {
+                    val songId = (arguments?.get("SONG") as? Song)?.uid
+                    songId?.run { presenter.onDeleteButtonClicked(this) }
+                    true
+                }
+                else -> false
+            }
+        }
     }
 }

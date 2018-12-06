@@ -7,5 +7,6 @@ interface SongDetailContract {
 
     interface Presenter : BaseContract.Presenter {
         fun onBackButtonClicked()
+        fun onDeleteButtonClicked(songId: String)
     }
 }
