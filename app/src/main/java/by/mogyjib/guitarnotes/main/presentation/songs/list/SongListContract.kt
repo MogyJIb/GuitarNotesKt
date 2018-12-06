@@ -1,6 +1,6 @@
 package by.mogyjib.guitarnotes.main.presentation.songs.list
 
-import by.mogyjib.guitarnotes.main.presentation.base.view.BaseContract
+import by.mogyjib.guitarnotes.base.view.BaseContract
 import by.mogyjib.guitarnotes.main.data.models.Song
 
 interface SongListContract {

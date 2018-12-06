@@ -29,7 +29,6 @@
             android:orientation="vertical"
             >
 
-
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/name_input_layout"
                 android:layout_width="match_parent"

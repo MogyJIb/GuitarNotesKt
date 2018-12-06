@@ -1,4 +1,4 @@
-package by.mogyjib.guitarnotes.main.presentation.base.view
+package by.mogyjib.guitarnotes.base.view
 
 import io.reactivex.disposables.CompositeDisposable
 

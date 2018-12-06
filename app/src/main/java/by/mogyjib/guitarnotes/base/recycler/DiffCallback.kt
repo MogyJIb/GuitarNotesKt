@@ -1,4 +1,4 @@
-package by.mogyjib.guitarnotes.main.presentation.base.recycler
+package by.mogyjib.guitarnotes.base.recycler
 
 import androidx.recyclerview.widget.DiffUtil
 

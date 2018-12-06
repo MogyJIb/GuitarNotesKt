@@ -3,7 +3,7 @@ package by.mogyjib.guitarnotes.main.presentation.splash
 import android.os.Bundle
 import androidx.navigation.Navigation
 import by.mogyjib.guitarnotes.R
-import by.mogyjib.guitarnotes.main.presentation.base.view.BaseActivity
+import by.mogyjib.guitarnotes.base.view.BaseActivity
 
 
 class SplashActivity : BaseActivity() {

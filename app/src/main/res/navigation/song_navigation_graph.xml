@@ -28,12 +28,26 @@
             app:popUpTo="@id/songlist_fragment"
             />
 
+        <action
+            android:id="@+id/action_songlist_to_song_edit"
+
+            app:destination="@id/song_edit_fragment"
+            />
+
     </fragment>
 
     <fragment
         android:id="@+id/song_detail_fragment"
         android:name="by.mogyjib.guitarnotes.main.presentation.songs.detail.SongDetailFragment"
         android:label="fragment_song_detail"
+
+        tools:layout="@layout/fragment_song_detail"
+        />
+
+    <fragment
+        android:id="@+id/song_edit_fragment"
+        android:name="by.mogyjib.guitarnotes.main.presentation.songs.edit.SongEditFragment"
+        android:label="fragment_song_edit"
 
         tools:layout="@layout/fragment_song_detail"
         />

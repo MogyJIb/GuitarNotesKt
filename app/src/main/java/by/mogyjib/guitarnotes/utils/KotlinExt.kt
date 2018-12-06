@@ -1,8 +1,10 @@
 package by.mogyjib.guitarnotes.utils
 
 import android.view.View
+import androidx.annotation.StringRes
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.FragmentNavigator
+import com.google.android.material.textfield.TextInputLayout
 import java.util.*
 
 
@@ -23,3 +25,6 @@ fun View.isVisible() = visibility == View.VISIBLE
 
 fun View.enable() = let { isEnabled = true }
 fun View.disable() = let { isEnabled = false }
+
+fun TextInputLayout.showError(@StringRes errorRes: Int) = run { error = context.getString(errorRes) }
+fun TextInputLayout.hideError() = run { isErrorEnabled = false }

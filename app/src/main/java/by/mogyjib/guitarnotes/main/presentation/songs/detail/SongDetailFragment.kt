@@ -8,7 +8,6 @@ import by.mogyjib.guitarnotes.R
 import by.mogyjib.guitarnotes.main.data.models.Song
 import by.mogyjib.guitarnotes.main.presentation.songs.BaseSongFragment
 import by.mogyjib.guitarnotes.utils.disable
-import by.mogyjib.guitarnotes.utils.enable
 import kotlinx.android.synthetic.main.fragment_song_detail.*
 import org.koin.android.ext.android.inject
 
@@ -26,7 +25,7 @@ class SongDetailFragment : BaseSongFragment(), SongDetailContract.View {
         /* Init bottom app bar with button */
         bottomBar().replaceMenu(R.menu.song_detail_bottom_menu)
         bottomBarButton().setImageResource(R.drawable.outline_arrow_back_ios_white_24)
-        bottomBarButton().setOnClickListener { router().navigateUp() }
+        bottomBarButton().setOnClickListener { presenter.onBackButtonClicked() }
 
         /* Bind song data to view */
         (arguments?.get("SONG") as? Song)?.run {
@@ -35,8 +34,8 @@ class SongDetailFragment : BaseSongFragment(), SongDetailContract.View {
             text_edit_text.setText(text)
         }
 
-        name_input_layout.disable()
-        author_input_layout.disable()
-        text_input_layout.disable()
+        name_edit_text.disable()
+        author_edit_text.disable()
+        text_edit_text.disable()
     }
 }

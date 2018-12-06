@@ -2,8 +2,8 @@ package by.mogyjib.guitarnotes.main.presentation.songs
 
 import android.view.View
 import android.view.ViewGroup
-import by.mogyjib.guitarnotes.main.presentation.base.recycler.BaseRecyclerViewAdapter
-import by.mogyjib.guitarnotes.main.presentation.base.recycler.BaseViewHolder
+import by.mogyjib.guitarnotes.base.recycler.BaseRecyclerViewAdapter
+import by.mogyjib.guitarnotes.base.recycler.BaseViewHolder
 import by.mogyjib.guitarnotes.main.data.models.Song
 import android.view.LayoutInflater
 import by.mogyjib.guitarnotes.R

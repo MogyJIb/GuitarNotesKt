@@ -1,7 +1,7 @@
 package by.mogyjib.guitarnotes.main.presentation.songs
 
 import android.os.Bundle
-import by.mogyjib.guitarnotes.main.presentation.base.view.BaseFragment
+import by.mogyjib.guitarnotes.base.view.BaseFragment
 
 abstract class BaseSongFragment : BaseFragment() {
     override fun onCreate(savedInstanceState: Bundle?) {

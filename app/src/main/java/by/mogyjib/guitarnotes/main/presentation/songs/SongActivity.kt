@@ -1,10 +1,9 @@
 package by.mogyjib.guitarnotes.main.presentation.songs
 
 import android.os.Bundle
-import android.text.BoringLayout
 import androidx.navigation.Navigation
 import by.mogyjib.guitarnotes.R
-import by.mogyjib.guitarnotes.main.presentation.base.view.BaseActivity
+import by.mogyjib.guitarnotes.base.view.BaseActivity
 import by.mogyjib.guitarnotes.utils.isVisible
 import com.google.android.material.bottomappbar.BottomAppBar
 import com.google.android.material.floatingactionbutton.FloatingActionButton

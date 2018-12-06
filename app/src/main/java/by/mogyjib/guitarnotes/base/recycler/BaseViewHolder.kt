@@ -1,9 +1,9 @@
-package by.mogyjib.guitarnotes.main.presentation.base.recycler
+package by.mogyjib.guitarnotes.base.recycler
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
-import by.mogyjib.guitarnotes.main.presentation.base.OnClickListener
-import by.mogyjib.guitarnotes.main.presentation.base.OnLongClickListener
+import by.mogyjib.guitarnotes.base.OnClickListener
+import by.mogyjib.guitarnotes.base.OnLongClickListener
 
 
 abstract class BaseViewHolder<T : Any>(

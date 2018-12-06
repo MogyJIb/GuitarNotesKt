@@ -6,6 +6,7 @@
     <color name="background">#FFFFFF</color>
     <color name="foreground">#010506</color>
     <color name="text_primary">#000000</color>
+    <color name="text_hint">#53878f</color>
     <color name="text_primary_inverse">#FFFFFF</color>
     <color name="error">#6c090d</color>
 </resources>
