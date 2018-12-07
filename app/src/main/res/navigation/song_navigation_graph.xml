@@ -21,10 +21,6 @@
             android:id="@+id/action_songlist_to_song_detail"
 
             app:destination="@id/song_detail_fragment"
-            app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_exit_anim"
-            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim"
             app:popUpTo="@id/songlist_fragment"
             />
 
@@ -32,6 +28,7 @@
             android:id="@+id/action_songlist_to_song_edit"
 
             app:destination="@id/song_edit_fragment"
+            app:popUpTo="@id/songlist_fragment"
             />
 
     </fragment>
@@ -42,7 +39,16 @@
         android:label="fragment_song_detail"
 
         tools:layout="@layout/fragment_song_detail"
-        />
+        >
+
+        <action
+            android:id="@+id/action_detail_to_song_edit"
+
+            app:destination="@id/song_edit_fragment"
+            app:popUpTo="@id/songlist_fragment"
+            />
+
+    </fragment>
 
     <fragment
         android:id="@+id/song_edit_fragment"

@@ -12,7 +12,7 @@ fun fakeSongList(): List<Song> {
     songNamesList.forEach {
         songs.add(Song(name = it,
                         author = songAuthorsList[(1..authorsCount).rand()-1],
-                        text = randomText((50..100).rand()))
+                        text = randomText((30..70).rand()))
         )
     }
     return songs.toList()

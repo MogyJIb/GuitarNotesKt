@@ -12,6 +12,8 @@ import kotlinx.android.synthetic.main.fragment_songlist.*
 import org.koin.android.ext.android.inject
 import androidx.recyclerview.widget.DividerItemDecoration
 import by.mogyjib.guitarnotes.main.presentation.songs.BaseSongFragment
+import com.google.android.material.bottomappbar.BottomAppBar
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 
 class SongListFragment : BaseSongFragment(), SongListContract.View {
@@ -27,9 +29,19 @@ class SongListFragment : BaseSongFragment(), SongListContract.View {
         super.onViewCreated(view, savedInstanceState)
 
         /* Init bottom app bar with button */
-        bottomBar().replaceMenu(R.menu.songlist_bottom_menu)
-        bottomBarButton().setImageResource(R.drawable.outline_add_white_24)
-        bottomBarButton().setOnClickListener { presenter.onAddSongClicked() }
+        bottomBarButton().run {
+            hide(object : FloatingActionButton.OnVisibilityChangedListener() {
+                override fun onHidden(fab: FloatingActionButton?) {
+                    bottomBar().replaceMenu(R.menu.songlist_bottom_menu)
+                    bottomBar().fabAlignmentMode = BottomAppBar.FAB_ALIGNMENT_MODE_CENTER
+
+                    setImageResource(R.drawable.outline_add_white_24)
+                    setOnClickListener { presenter.onAddSongClicked() }
+
+                    show()
+                }
+            })
+        }
 
         /* Init adapter and set up recycler view */
         songsAdapter = SongsAdapter()

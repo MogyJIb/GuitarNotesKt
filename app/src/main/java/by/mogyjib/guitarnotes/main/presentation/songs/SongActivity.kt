@@ -20,24 +20,4 @@ class SongActivity : BaseActivity() {
 
     fun bottomBar(): BottomAppBar = bottom_app_bar
     fun bottomBarButton(): FloatingActionButton = bottom_app_bar_button
-
-    fun toggleBottomBarButton(toggleFabAlignment: Boolean = false) {
-        if (bottom_app_bar_button.isVisible()) {
-            bottom_app_bar_button.hide(object : FloatingActionButton.OnVisibilityChangedListener() {
-                override fun onHidden(fab: FloatingActionButton?) {
-                    if (toggleFabAlignment)
-                        bottom_app_bar.toggleFabAlignment()
-                    bottom_app_bar_button.show()
-                }
-            })
-        }
-    }
-
-    private fun BottomAppBar.toggleFabAlignment() {
-        fabAlignmentMode =
-                if (fabAlignmentMode == BottomAppBar.FAB_ALIGNMENT_MODE_CENTER)
-                    BottomAppBar.FAB_ALIGNMENT_MODE_END
-                else
-                    BottomAppBar.FAB_ALIGNMENT_MODE_CENTER
-    }
 }

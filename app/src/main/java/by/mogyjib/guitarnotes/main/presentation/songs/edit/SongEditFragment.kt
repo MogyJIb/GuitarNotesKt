@@ -9,6 +9,8 @@ import by.mogyjib.guitarnotes.main.data.models.Song
 import by.mogyjib.guitarnotes.main.presentation.songs.BaseSongFragment
 import by.mogyjib.guitarnotes.utils.hideError
 import by.mogyjib.guitarnotes.utils.showError
+import com.google.android.material.bottomappbar.BottomAppBar
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kotlinx.android.synthetic.main.fragment_song_detail.*
 import org.koin.android.ext.android.inject
 
@@ -33,9 +35,22 @@ class SongEditFragment : BaseSongFragment(), SongEditContract.View {
         }
 
         /* Init bottom app bar with button */
-        bottomBar().replaceMenu(R.menu.song_edit_bottom_menu)
-        bottomBarButton().setImageResource(R.drawable.outline_arrow_back_ios_white_24)
-        bottomBarButton().setOnClickListener { presenter.onBackButtonClicked() }
+        bottomBarButton().run {
+            hide(object : FloatingActionButton.OnVisibilityChangedListener() {
+                override fun onHidden(fab: FloatingActionButton?) {
+                    bottomBar().replaceMenu(
+                            songId?.let { R.menu.song_edit_bottom_menu }
+                                    ?: R.menu.song_add_bottom_menu
+                    )
+                    bottomBar().fabAlignmentMode = BottomAppBar.FAB_ALIGNMENT_MODE_END
+
+                    setImageResource(R.drawable.outline_arrow_back_ios_white_24)
+                    bottomBarButton().setOnClickListener { presenter.onBackButtonClicked() }
+
+                    show()
+                }
+            })
+        }
 
         /* Init on menu item click listener */
         bottomBar().setOnMenuItemClickListener {

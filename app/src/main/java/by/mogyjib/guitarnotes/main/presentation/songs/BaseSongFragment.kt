@@ -2,6 +2,8 @@ package by.mogyjib.guitarnotes.main.presentation.songs
 
 import android.os.Bundle
 import by.mogyjib.guitarnotes.base.view.BaseFragment
+import com.google.android.material.bottomappbar.BottomAppBar
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 abstract class BaseSongFragment : BaseFragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -10,11 +12,6 @@ abstract class BaseSongFragment : BaseFragment() {
         super.onCreate(savedInstanceState)
     }
 
-    override fun onDestroyView() {
-        (activity as SongActivity).toggleBottomBarButton(true)
-        super.onDestroyView()
-    }
-
-    fun bottomBar() = (activity as SongActivity).bottomBar()
-    fun bottomBarButton() = (activity as SongActivity).bottomBarButton()
+    fun bottomBar(): BottomAppBar = (activity as SongActivity).bottomBar()
+    fun bottomBarButton(): FloatingActionButton = (activity as SongActivity).bottomBarButton()
 }

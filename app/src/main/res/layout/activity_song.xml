@@ -30,7 +30,7 @@
 
             style="@style/Widget.AppTheme.BottomAppBar"
 
-            app:hideOnScroll="true"
+            app:hideOnScroll="false"
             app:layout_scrollFlags="scroll|enterAlways"
             app:fabAlignmentMode="center"
             />
