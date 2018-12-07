@@ -6,8 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/background"
     android:clipToPadding="false"
+    android:background="@drawable/background_gradient"
     >
 
     <ScrollView
@@ -37,6 +37,7 @@
 
                 app:helperText="Any symbols"
                 app:counterMaxLength="70"
+                app:counterEnabled="true"
 
                 style="@style/Widget.AppTheme.TextInputLayout"
                 >
@@ -54,11 +55,12 @@
                 android:id="@+id/author_input_layout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="@dimen/_16dp"
+                android:layout_marginTop="@dimen/_20dp"
                 android:hint="Author"
 
                 app:helperText="Any symbols"
                 app:counterMaxLength="70"
+                app:counterEnabled="true"
 
                 style="@style/Widget.AppTheme.TextInputLayout"
                 >
@@ -76,11 +78,12 @@
                 android:id="@+id/text_input_layout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="@dimen/_16dp"
+                android:layout_marginTop="@dimen/_20dp"
                 android:hint="Text"
 
                 app:helperText="Any symbols"
                 app:counterMaxLength="500"
+                app:counterEnabled="true"
 
                 style="@style/Widget.AppTheme.TextInputLayout"
                 >

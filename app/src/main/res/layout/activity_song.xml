@@ -33,7 +33,6 @@
             app:hideOnScroll="true"
             app:layout_scrollFlags="scroll|enterAlways"
             app:fabAlignmentMode="center"
-            app:navigationIcon="@drawable/outline_menu_white_24"
             />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton

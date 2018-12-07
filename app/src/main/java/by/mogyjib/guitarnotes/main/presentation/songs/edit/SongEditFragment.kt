@@ -24,11 +24,6 @@ class SongEditFragment : BaseSongFragment(), SongEditContract.View {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        /* Init bottom app bar with button */
-        bottomBar().replaceMenu(R.menu.song_edit_bottom_menu)
-        bottomBarButton().setImageResource(R.drawable.outline_arrow_back_ios_white_24)
-        bottomBarButton().setOnClickListener { presenter.onBackButtonClicked() }
-
         /* Bind song data to view */
         (arguments?.get("SONG") as? Song)?.run {
             songId = uid
@@ -36,6 +31,11 @@ class SongEditFragment : BaseSongFragment(), SongEditContract.View {
             author_edit_text.setText(author)
             text_edit_text.setText(text)
         }
+
+        /* Init bottom app bar with button */
+        bottomBar().replaceMenu(R.menu.song_edit_bottom_menu)
+        bottomBarButton().setImageResource(R.drawable.outline_arrow_back_ios_white_24)
+        bottomBarButton().setOnClickListener { presenter.onBackButtonClicked() }
 
         /* Init on menu item click listener */
         bottomBar().setOnMenuItemClickListener {
