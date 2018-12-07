@@ -17,7 +17,6 @@ fun <T> Flowable<T>.async(): Flowable<T>
         = this.subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
 
-
 fun <T> Maybe<T>.async(): Maybe<T>
         = this.subscribeOn(Schedulers.io())
          .observeOn(AndroidSchedulers.mainThread())

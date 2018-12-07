@@ -1,6 +1,7 @@
 package by.mogyjib.guitarnotes.base.view
 
 import android.content.Context
+import androidx.annotation.StringRes
 import androidx.navigation.NavController
 
 interface BaseContract {
@@ -22,6 +23,7 @@ interface BaseContract {
      */
     interface View : Router {
         fun context(): Context
+        fun toast(@StringRes message: Int)
     }
 
     /**

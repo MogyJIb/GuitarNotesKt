@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <string name="search">Поиск</string>
-
+    <string name="delete">Удалить</string>
+    <string name="edit">Изменить</string>
+    <string name="save">Сохранить</string>
 </resources>

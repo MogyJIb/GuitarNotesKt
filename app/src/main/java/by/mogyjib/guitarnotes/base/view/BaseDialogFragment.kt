@@ -1,10 +1,14 @@
 package by.mogyjib.guitarnotes.base.view
 
+import android.widget.Toast
 import androidx.fragment.app.DialogFragment
 
 abstract class BaseDialogFragment : DialogFragment(), BaseContract.View {
     override fun context() = context
             ?: throw NullPointerException("Class ${this.javaClass.simpleName} context is null")
+
+    override fun toast(message: Int)
+            = Toast.makeText(context, message, Toast.LENGTH_LONG).show()
 
     override fun router() =
             if (activity is BaseActivity)
