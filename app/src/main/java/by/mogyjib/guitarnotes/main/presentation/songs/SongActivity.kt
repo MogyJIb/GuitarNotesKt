@@ -35,12 +35,7 @@ class SongActivity : BaseActivity() {
         }
 
         bottom_app_bar.setNavigationOnClickListener {
-            left_side_menu.apply {
-                visibility = if (visibility == View.VISIBLE)
-                                View.INVISIBLE
-                             else
-                                View.VISIBLE
-            }
+            MainMenuDialogFragment().show(supportFragmentManager, MainMenuDialogFragment::javaClass.name)
         }
     }
 

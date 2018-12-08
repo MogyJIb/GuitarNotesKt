@@ -63,20 +63,4 @@
             tools:src="@drawable/outline_add_white_24"
             />
 
-        <FrameLayout
-            android:id="@+id/left_side_menu"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingBottom="@dimen/_100dp"
-            android:visibility="invisible"
-
-            tools:visibility="visible"
-
-            app:layout_anchor="@id/bottom_app_bar"
-            >
-
-                <include layout="@layout/side_main_menu_layout"/>
-
-        </FrameLayout>
-
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
