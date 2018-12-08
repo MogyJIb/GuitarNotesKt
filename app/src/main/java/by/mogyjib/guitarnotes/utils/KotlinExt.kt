@@ -1,5 +1,6 @@
 package by.mogyjib.guitarnotes.utils
 
+import android.util.Log
 import android.view.View
 import androidx.annotation.StringRes
 import androidx.navigation.Navigation
@@ -28,3 +29,5 @@ fun View.disable() = let { isEnabled = false }
 
 fun TextInputLayout.showError(@StringRes errorRes: Int) = run { error = context.getString(errorRes) }
 fun TextInputLayout.hideError() = run { isErrorEnabled = false }
+
+fun <T> Class<T>.log(message: String) = Log.d(simpleName, message)
