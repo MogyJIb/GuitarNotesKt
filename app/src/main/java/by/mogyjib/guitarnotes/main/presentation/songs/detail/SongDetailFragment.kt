@@ -4,12 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import by.mogyjib.guitarnotes.R
 import by.mogyjib.guitarnotes.main.data.models.Song
 import by.mogyjib.guitarnotes.main.presentation.songs.BaseSongFragment
 import by.mogyjib.guitarnotes.utils.disable
 import com.google.android.material.bottomappbar.BottomAppBar
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.android.material.textfield.TextInputLayout
 import kotlinx.android.synthetic.main.fragment_song_detail.*
 import org.koin.android.ext.android.inject
 
@@ -46,9 +48,9 @@ class SongDetailFragment : BaseSongFragment(), SongDetailContract.View {
             })
         }
 
-        name_edit_text.disable()
-        author_edit_text.disable()
-        text_edit_text.disable()
+        disableInputField(name_edit_text, name_input_layout)
+        disableInputField(author_edit_text, author_input_layout)
+        disableInputField(text_edit_text, text_input_layout)
 
         /* Init on menu item click listener */
         bottomBar().setOnMenuItemClickListener {
@@ -66,5 +68,11 @@ class SongDetailFragment : BaseSongFragment(), SongDetailContract.View {
                 else -> false
             }
         }
+    }
+
+    private fun disableInputField(editText: EditText, textInputLayout: TextInputLayout) {
+        editText.disable()
+        textInputLayout.isHelperTextEnabled = false
+        textInputLayout.isCounterEnabled = false
     }
 }

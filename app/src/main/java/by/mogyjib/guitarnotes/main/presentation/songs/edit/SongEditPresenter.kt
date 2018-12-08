@@ -6,6 +6,7 @@ import by.mogyjib.guitarnotes.base.view.BasePresenter
 import by.mogyjib.guitarnotes.main.domain.DeleteSongUseCase
 import by.mogyjib.guitarnotes.main.domain.UpdateSongUseCase
 import by.mogyjib.guitarnotes.main.domain.ValidateSongUseCase
+import by.mogyjib.guitarnotes.utils.toast
 import io.reactivex.rxkotlin.plusAssign
 
 class SongEditPresenter(
@@ -17,8 +18,10 @@ class SongEditPresenter(
         songId?.let {
             disposables += deleteSongUseCase.deleteSongAsync(songId)
                     .subscribe({
-                        view?.toast(R.string.delete_song_success)
-                        view?.router()?.navigateUp()
+                        view?.run {
+                            context().toast(R.string.delete_song_success)
+                            router().navigateUp()
+                        }
                     }, this::handleError)
         }
     }
@@ -27,8 +30,10 @@ class SongEditPresenter(
         if (validateSong(song))
             disposables += updateSongUseCase.updateSongAsync(song, songId)
                     .subscribe({
-                        view?.toast(R.string.save_song_success)
-                        view?.router()?.navigateUp()
+                        view?.run {
+                            context().toast(R.string.save_song_success)
+                            router().navigateUp()
+                        }
                     }, this::handleError)
     }
 
