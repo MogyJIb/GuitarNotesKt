@@ -3,6 +3,7 @@ package by.mogyjib.guitarnotes.base.view
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import by.mogyjib.guitarnotes.utils.findNavController
+import by.mogyjib.guitarnotes.utils.hideKeyboard
 import by.mogyjib.guitarnotes.utils.log
 
 abstract class BaseFragment: Fragment(), BaseContract.View {
@@ -24,6 +25,7 @@ abstract class BaseFragment: Fragment(), BaseContract.View {
 
     override fun onPause() {
         presenter?.unbind()
+        activity?.hideKeyboard()
         super.onPause()
         javaClass.log("onPause")
     }

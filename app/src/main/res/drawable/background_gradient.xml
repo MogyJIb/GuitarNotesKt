@@ -3,15 +3,14 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     >
 
-
     <gradient
         android:type="radial"
-        android:gradientRadius="350dp"
-        android:startColor="#e3ffff"
+        android:gradientRadius="300dp"
+        android:startColor="#deffff"
         android:centerColor="#ffffff"
         android:endColor="#ffffff"
-        android:centerX="0.8"
-        android:centerY="0.2"
+        android:centerX="0.3"
+        android:centerY="0"
         />
 
 </shape>
