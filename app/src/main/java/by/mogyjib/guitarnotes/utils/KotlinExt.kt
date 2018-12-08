@@ -1,10 +1,12 @@
 package by.mogyjib.guitarnotes.utils
 
 import android.app.Activity
+import android.content.Context
 import android.content.res.Resources
 import android.util.Log
 import android.view.View
 import android.view.inputmethod.InputMethodManager
+import android.widget.Toast
 import androidx.annotation.StringRes
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.FragmentNavigator
@@ -44,3 +46,6 @@ fun Activity.hideKeyboard() {
         inputMethodManager.hideSoftInputFromWindow(focused.windowToken, 0)
     }
 }
+
+
+fun Context.toast(message: Int) = Toast.makeText(this, message, Toast.LENGTH_LONG).show()

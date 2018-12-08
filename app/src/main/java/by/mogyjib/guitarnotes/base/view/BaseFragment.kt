@@ -14,9 +14,6 @@ abstract class BaseFragment: Fragment(), BaseContract.View {
     override fun context() = context
             ?: throw NullPointerException("Class ${this.javaClass.simpleName} context is null")
 
-    override fun toast(message: Int)
-            = Toast.makeText(context, message, Toast.LENGTH_LONG).show()
-
     override fun onResume() {
         super.onResume()
         presenter?.bind(this)

@@ -2,6 +2,7 @@ package by.mogyjib.guitarnotes.main.presentation.songs
 
 import android.graphics.Paint
 import android.os.Bundle
+import android.view.View
 import androidx.core.content.ContextCompat
 import androidx.navigation.Navigation
 import by.mogyjib.guitarnotes.R
@@ -31,6 +32,15 @@ class SongActivity : BaseActivity() {
         top_bar.background = MaterialShapeDrawable(shapePathModel).apply {
             setTint(ContextCompat.getColor(this@SongActivity, R.color.primary))
             paintStyle = Paint.Style.FILL
+        }
+
+        bottom_app_bar.setNavigationOnClickListener {
+            left_side_menu.apply {
+                visibility = if (visibility == View.VISIBLE)
+                                View.INVISIBLE
+                             else
+                                View.VISIBLE
+            }
         }
     }
 

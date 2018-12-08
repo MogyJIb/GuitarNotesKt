@@ -8,8 +8,6 @@ import by.mogyjib.guitarnotes.utils.log
 
 abstract class BaseActivity : AppCompatActivity(), BaseContract.View {
     override fun context() = this
-    override fun toast(message: Int)
-            = Toast.makeText(this, message, Toast.LENGTH_LONG).show()
 
     override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
         super.onCreate(savedInstanceState, persistentState)

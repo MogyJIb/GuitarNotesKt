@@ -7,9 +7,6 @@ abstract class BaseDialogFragment : DialogFragment(), BaseContract.View {
     override fun context() = context
             ?: throw NullPointerException("Class ${this.javaClass.simpleName} context is null")
 
-    override fun toast(message: Int)
-            = Toast.makeText(context, message, Toast.LENGTH_LONG).show()
-
     override fun router() =
             if (activity is BaseActivity)
                 (activity as BaseActivity).router()

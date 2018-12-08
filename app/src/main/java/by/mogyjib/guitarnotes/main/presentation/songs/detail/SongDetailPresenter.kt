@@ -5,6 +5,7 @@ import by.mogyjib.guitarnotes.R
 import by.mogyjib.guitarnotes.base.view.BasePresenter
 import by.mogyjib.guitarnotes.main.data.models.Song
 import by.mogyjib.guitarnotes.main.domain.DeleteSongUseCase
+import by.mogyjib.guitarnotes.utils.toast
 import io.reactivex.rxkotlin.plusAssign
 
 class SongDetailPresenter(
@@ -18,8 +19,10 @@ class SongDetailPresenter(
     override fun onDeleteButtonClicked(songId: String) {
         disposables += deleteSongUseCase.deleteSongAsync(songId)
                 .subscribe({
-                    view?.toast(R.string.delete_song_success)
-                    view?.router()?.navigateUp()
+                    view?.run {
+                        context().toast(R.string.delete_song_success)
+                        router().navigateUp()
+                    }
                 }, this::handleError)
     }
 
