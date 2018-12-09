@@ -3,7 +3,7 @@ package by.mogyjib.guitarnotes.main.presentation.splash.view
 import by.mogyjib.guitarnotes.R
 import by.mogyjib.guitarnotes.base.view.BasePresenter
 import by.mogyjib.guitarnotes.main.data.repository.IRepository
-import by.mogyjib.guitarnotes.utils.async
+import by.mogyjib.guitarnotes.utils.extentions.async
 import by.mogyjib.guitarnotes.utils.fakeSongList
 import by.mogyjib.guitarnotes.base.view.BaseContract
 import io.reactivex.Observable

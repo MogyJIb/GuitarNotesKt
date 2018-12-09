@@ -2,12 +2,11 @@ package by.mogyjib.guitarnotes.main.presentation.songs
 
 import android.graphics.Paint
 import android.os.Bundle
-import android.view.View
 import androidx.core.content.ContextCompat
 import androidx.navigation.Navigation
 import by.mogyjib.guitarnotes.R
 import by.mogyjib.guitarnotes.base.view.BaseActivity
-import by.mogyjib.guitarnotes.utils.px
+import by.mogyjib.guitarnotes.utils.extentions.px
 import com.google.android.material.bottomappbar.BottomAppBar
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.shape.*

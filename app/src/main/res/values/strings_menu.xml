@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="search">Поиск</string>
-    <string name="delete">Удалить</string>
-    <string name="edit">Изменить</string>
-    <string name="save">Сохранить</string>
+    <string name="search">Search</string>
+    <string name="resume">Continue</string>
+    <string name="delete">Delete</string>
+    <string name="edit">Edit</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="next">Next</string>
 </resources>

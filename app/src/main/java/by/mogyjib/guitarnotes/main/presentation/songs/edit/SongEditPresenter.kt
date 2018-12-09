@@ -6,7 +6,7 @@ import by.mogyjib.guitarnotes.base.view.BasePresenter
 import by.mogyjib.guitarnotes.main.domain.DeleteSongUseCase
 import by.mogyjib.guitarnotes.main.domain.UpdateSongUseCase
 import by.mogyjib.guitarnotes.main.domain.ValidateSongUseCase
-import by.mogyjib.guitarnotes.utils.toast
+import by.mogyjib.guitarnotes.utils.extentions.toast
 import io.reactivex.rxkotlin.plusAssign
 
 class SongEditPresenter(

@@ -1,4 +1,4 @@
-package by.mogyjib.guitarnotes.utils
+package by.mogyjib.guitarnotes.utils.extentions
 
 import io.reactivex.*
 import io.reactivex.android.schedulers.AndroidSchedulers

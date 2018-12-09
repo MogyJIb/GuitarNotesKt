@@ -1,10 +1,9 @@
 package by.mogyjib.guitarnotes.base.view
 
-import android.widget.Toast
 import androidx.fragment.app.Fragment
-import by.mogyjib.guitarnotes.utils.findNavController
-import by.mogyjib.guitarnotes.utils.hideKeyboard
-import by.mogyjib.guitarnotes.utils.log
+import by.mogyjib.guitarnotes.utils.extentions.findNavController
+import by.mogyjib.guitarnotes.utils.extentions.hideKeyboard
+import by.mogyjib.guitarnotes.utils.extentions.log
 
 abstract class BaseFragment: Fragment(), BaseContract.View {
     protected open val presenter: BaseContract.Presenter? = null

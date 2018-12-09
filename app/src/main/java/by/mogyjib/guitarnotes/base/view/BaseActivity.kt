@@ -2,9 +2,8 @@ package by.mogyjib.guitarnotes.base.view
 
 import android.os.Bundle
 import android.os.PersistableBundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import by.mogyjib.guitarnotes.utils.log
+import by.mogyjib.guitarnotes.utils.extentions.log
 
 abstract class BaseActivity : AppCompatActivity(), BaseContract.View {
     override fun context() = this

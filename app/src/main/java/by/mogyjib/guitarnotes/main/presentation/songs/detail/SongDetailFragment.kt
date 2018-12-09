@@ -1,5 +1,6 @@
 package by.mogyjib.guitarnotes.main.presentation.songs.detail
 
+import android.content.DialogInterface
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,8 +8,9 @@ import android.view.ViewGroup
 import android.widget.EditText
 import by.mogyjib.guitarnotes.R
 import by.mogyjib.guitarnotes.main.data.models.Song
+import by.mogyjib.guitarnotes.main.presentation.InfoDialog
 import by.mogyjib.guitarnotes.main.presentation.songs.BaseSongFragment
-import by.mogyjib.guitarnotes.utils.disable
+import by.mogyjib.guitarnotes.utils.extentions.disable
 import com.google.android.material.bottomappbar.BottomAppBar
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.textfield.TextInputLayout
@@ -55,11 +57,7 @@ class SongDetailFragment : BaseSongFragment(), SongDetailContract.View {
         /* Init on menu item click listener */
         bottomBar().setOnMenuItemClickListener {
             when (it.itemId) {
-                R.id.action_delete -> {
-                    val songId = (arguments?.get("SONG") as? Song)?.uid
-                    songId?.run { presenter.onDeleteButtonClicked(this) }
-                    true
-                }
+                R.id.action_delete -> deleteButtonClicked()
                 R.id.action_edit -> {
                     val song = (arguments?.get("SONG") as? Song)
                     song?.run { presenter.onEditButtonClicked(this) }
@@ -74,5 +72,22 @@ class SongDetailFragment : BaseSongFragment(), SongDetailContract.View {
         editText.disable()
         textInputLayout.isHelperTextEnabled = false
         textInputLayout.isCounterEnabled = false
+    }
+
+    private fun deleteButtonClicked(): Boolean {
+        val songId = (arguments?.get("SONG") as? Song)?.uid
+        songId ?: return true
+
+        InfoDialog.newInstance(
+                title = getString(R.string.dialog_delete_song_title),
+                message = getString(R.string.dialog_delete_song_message),
+                leftButtonCaption = getString(R.string.cancel),
+                rightButtonCaption = getString(R.string.resume)
+        ).apply {
+            rightButtonListener = DialogInterface.OnClickListener { _, _ ->
+                presenter.onDeleteButtonClicked(songId)
+            }
+        }.show(fragmentManager, InfoDialog::class.java.simpleName)
+        return true
     }
 }

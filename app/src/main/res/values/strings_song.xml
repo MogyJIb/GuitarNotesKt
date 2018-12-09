@@ -5,4 +5,7 @@
     <string name="invalid_song_text_error">Text can\'t be empty</string>
     <string name="save_song_success">Song was saved successfully</string>
     <string name="delete_song_success">Song was deleted successfully</string>
+
+    <string name="dialog_delete_song_title">Delete song</string>
+    <string name="dialog_delete_song_message">Are you sure you want delete this song?</string>
 </resources>

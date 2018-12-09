@@ -1,4 +1,4 @@
-package by.mogyjib.guitarnotes.utils
+package by.mogyjib.guitarnotes.utils.extentions
 
 import android.app.Activity
 import android.content.Context
@@ -49,3 +49,8 @@ fun Activity.hideKeyboard() {
 
 
 fun Context.toast(message: Int) = Toast.makeText(this, message, Toast.LENGTH_LONG).show()
+
+fun notNull(vararg values: Any?, action: () -> Unit) {
+    values.forEach { it ?: return }
+    action()
+}

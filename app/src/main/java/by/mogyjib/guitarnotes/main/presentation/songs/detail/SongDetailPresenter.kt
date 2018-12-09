@@ -5,7 +5,7 @@ import by.mogyjib.guitarnotes.R
 import by.mogyjib.guitarnotes.base.view.BasePresenter
 import by.mogyjib.guitarnotes.main.data.models.Song
 import by.mogyjib.guitarnotes.main.domain.DeleteSongUseCase
-import by.mogyjib.guitarnotes.utils.toast
+import by.mogyjib.guitarnotes.utils.extentions.toast
 import io.reactivex.rxkotlin.plusAssign
 
 class SongDetailPresenter(

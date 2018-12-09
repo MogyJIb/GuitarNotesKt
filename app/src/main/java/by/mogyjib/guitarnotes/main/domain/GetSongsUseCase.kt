@@ -2,7 +2,7 @@ package by.mogyjib.guitarnotes.main.domain
 
 import by.mogyjib.guitarnotes.main.data.models.Song
 import by.mogyjib.guitarnotes.main.data.repository.IRepository
-import by.mogyjib.guitarnotes.utils.async
+import by.mogyjib.guitarnotes.utils.extentions.async
 import io.reactivex.Observable
 
 class GetSongsUseCase(
