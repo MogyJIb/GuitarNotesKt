@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Guitar Notes</string>
+    <string name="google_maps_key" translatable="false" templateMergeStrategy="preserve">AIzaSyDsJHIZe1jfJxpwWP_PBsgJNaktkzquaAY</string>
 </resources>
