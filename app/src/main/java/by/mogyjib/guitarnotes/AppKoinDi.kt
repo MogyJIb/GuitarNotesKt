@@ -16,6 +16,9 @@ import by.mogyjib.guitarnotes.main.presentation.songs.list.SongListPresenter
 import by.mogyjib.guitarnotes.main.presentation.splash.view.SplashPresenter
 import by.mogyjib.guitarnotes.map.data.remote.PlacesService
 import by.mogyjib.guitarnotes.map.data.remote.RemoteApi
+import by.mogyjib.guitarnotes.map.data.repository.IPlacesRepository
+import by.mogyjib.guitarnotes.map.data.repository.PlacesRepository
+import by.mogyjib.guitarnotes.map.domain.LocationHandler
 import by.mogyjib.guitarnotes.map.domain.NearbySearchUseCase
 import by.mogyjib.guitarnotes.map.presentation.MapContract
 import by.mogyjib.guitarnotes.map.presentation.MapPresenter
@@ -32,6 +35,8 @@ import java.util.concurrent.TimeUnit
 val dataModule = module {
     single { DatabaseApi.instance(androidContext()) }
     single { RepositoryApi(get()) as IRepository }
+
+    single { PlacesRepository(get()) as IPlacesRepository }
 }
 
 val remoteModule = module {
@@ -48,6 +53,7 @@ val domainModule = module {
     single { DeleteSongUseCase(get()) }
 
     single { NearbySearchUseCase(androidContext().getString(R.string.google_maps_key), get()) }
+    single { LocationHandler() }
 }
 
 val splashModule = module {

@@ -7,7 +7,7 @@ import retrofit2.http.Query
 
 interface PlacesService {
 
-    @GET("nearbysearch")
+    @GET("nearbysearch/json")
     fun nearbySearch(
             @Query("key") key: String,
             @Query("location") location: String,

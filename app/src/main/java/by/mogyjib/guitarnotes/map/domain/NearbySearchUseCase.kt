@@ -13,7 +13,7 @@ class NearbySearchUseCase(
     fun nearbyPlacesAsync(
             location: Location,
             radius: Int = 15000,
-            type: String = "json"
+            type: String = "atm"
     ): Observable<List<PlaceBasicDTO>>
             = placesRepository.nearbyPlaces(key, location.toStr(), radius, type).async()
 

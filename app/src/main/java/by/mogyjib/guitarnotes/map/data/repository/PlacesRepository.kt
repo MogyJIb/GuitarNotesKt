@@ -15,15 +15,15 @@ class PlacesRepository(
             radius: Int,
             type: String
     ): Observable<List<PlaceBasicDTO>> {
-        val tokenControl: BehaviorSubject<String?> = BehaviorSubject.createDefault("default")
+        val tokenControl: BehaviorSubject<String> = BehaviorSubject.createDefault("default")
         return tokenControl.concatMap { token ->
             val tokenToSend = if (token != "default") token else null
-            return@concatMap placesService.nearbySearch(key, type, radius, type, tokenToSend)
+            placesService.nearbySearch(key, location, radius, type, tokenToSend)
                     .doOnNext { searchResult ->
-                        searchResult.nextToken?.let { tokenControl.onNext(it) }
+                        searchResult.nextToken?.let { token -> tokenControl.onNext(token) }
                                 ?: tokenControl.onComplete()
                     }
-                    .flatMap { searchResult ->
+                    .concatMap { searchResult ->
                         Observable.fromCallable { searchResult.places }
                     }
         }

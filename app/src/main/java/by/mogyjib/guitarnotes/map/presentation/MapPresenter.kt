@@ -23,7 +23,7 @@ class MapPresenter(
                         result?.lastLocation ?: return
 
                         disposables += nearbySearchUseCase.nearbyPlacesAsync(result.lastLocation)
-                                .subscribe { places -> view?.addPlaces(places) }
+                                .subscribe({ places -> view?.addPlaces(places) }, ::handleError)
                     }
                 })
     }

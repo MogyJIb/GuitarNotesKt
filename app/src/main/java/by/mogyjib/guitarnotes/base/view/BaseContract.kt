@@ -1,6 +1,7 @@
 package by.mogyjib.guitarnotes.base.view
 
 import android.content.Context
+import android.util.Log
 import androidx.annotation.StringRes
 import androidx.navigation.NavController
 
@@ -14,6 +15,7 @@ interface BaseContract {
         fun unbind() {}
         fun handleError(error: Throwable) {
             println("${this.javaClass.simpleName}\n${error.message}")
+            Log.e(this::class.java.simpleName, error.message, error)
             error.printStackTrace()
         }
     }
