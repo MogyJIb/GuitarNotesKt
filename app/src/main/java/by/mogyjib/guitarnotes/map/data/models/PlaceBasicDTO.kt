@@ -17,4 +17,9 @@ data class PlaceBasicDTO(
         @Expose
         @SerializedName("place_id")
         var placeId: String
-) : Serializable
+) : Serializable {
+    val latitude: Double
+         get() = geometry.location.latitude
+    val longitude: Double
+         get() = geometry.location.longitude
+}

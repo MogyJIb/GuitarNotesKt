@@ -10,9 +10,11 @@ class GuitarNotesApplication : Application(){
 
         startKoin(this, listOf(
                 dataModule,
+                remoteModule,
                 domainModule,
                 splashModule,
-                songsModule
+                songsModule,
+                mapModule
         ))
     }
 }
