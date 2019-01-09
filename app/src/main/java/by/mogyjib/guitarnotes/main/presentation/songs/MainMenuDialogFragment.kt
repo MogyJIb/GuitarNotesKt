@@ -6,10 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.Window
-import androidx.fragment.app.DialogFragment
 import by.mogyjib.guitarnotes.R
+import by.mogyjib.guitarnotes.base.view.BaseDialogFragment
+import kotlinx.android.synthetic.main.main_menu_layout.*
 
-class MainMenuDialogFragment : DialogFragment() {
+class MainMenuDialogFragment : BaseDialogFragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View?
             = inflater.inflate(R.layout.main_menu_layout, container, false)
 
@@ -26,7 +27,13 @@ class MainMenuDialogFragment : DialogFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        
         view.setOnClickListener { dismiss() }
+
+        map_button.setOnClickListener {
+            router().navigate(R.id.action_to_map_activity)
+            dismiss()
+        }
     }
 
     override fun onStart() {
