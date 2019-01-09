@@ -16,14 +16,14 @@ class PlacesRepository(
             type: String
     ): Observable<List<PlaceBasicDTO>> {
         val tokenControl: BehaviorSubject<String> = BehaviorSubject.createDefault("default")
-        return tokenControl.concatMap { token ->
+        return tokenControl.flatMap { token ->
             val tokenToSend = if (token != "default") token else null
             placesService.nearbySearch(key, location, radius, type, tokenToSend)
                     .doOnNext { searchResult ->
                         searchResult.nextToken?.let { token -> tokenControl.onNext(token) }
                                 ?: tokenControl.onComplete()
                     }
-                    .concatMap { searchResult ->
+                    .flatMap { searchResult ->
                         Observable.fromCallable { searchResult.places }
                     }
         }

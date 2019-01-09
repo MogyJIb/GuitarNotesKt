@@ -58,4 +58,18 @@
         tools:layout="@layout/fragment_song_detail"
         />
 
+    <activity
+        android:id="@+id/map_activity"
+        android:name="by.mogyjib.guitarnotes.map.presentation.MapActivity"
+        android:label="activity_map"
+
+        tools:layout="@layout/activity_map"
+        />
+
+    <action
+        android:id="@+id/action_to_map_activity"
+
+        app:destination="@id/map_activity"
+        />
+
 </navigation>

@@ -24,6 +24,11 @@ class MapPresenter(
 
                         disposables += nearbySearchUseCase.nearbyPlacesAsync(result.lastLocation)
                                 .subscribe({ places -> view?.addPlaces(places) }, ::handleError)
+
+                        view?.updateCurrentLocationMarker(
+                                result.lastLocation.latitude,
+                                result.lastLocation.longitude
+                        )
                     }
                 })
     }

@@ -5,7 +5,7 @@ import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationCallback
 import com.google.android.gms.location.LocationRequest
 
-const val UPDATE_INTERVAL: Long = 5000
+const val UPDATE_INTERVAL: Long = 20000
 
 class LocationHandler {
     private lateinit var fusedLocationClient: FusedLocationProviderClient
